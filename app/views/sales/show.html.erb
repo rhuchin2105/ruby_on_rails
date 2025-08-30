@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sale %>
+
+<div class="btn-group">
+  <%= link_to "Edit this sale", edit_sale_path(@sale), class: 'btn btn-warning' %>
+  <%= link_to "Back to home", root_path, class: 'btn btn-secondary' %>
+
+  <%= button_to "Destroy this sale", @sale, method: :delete, class: 'btn btn-danger' %>
+</div>

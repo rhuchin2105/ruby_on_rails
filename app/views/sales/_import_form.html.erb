@@ -1,0 +1,8 @@
+<%= form_with url: import_sales_path, method: :post do |f| %>
+	<div class="container">
+		<%= f.file_field :file, accept: ".xlsx" %>
+		<div class="btn-group">
+			<%= f.submit "Import", class: "btn btn-primary" %>
+		</div>
+	</div>
+<% end %>

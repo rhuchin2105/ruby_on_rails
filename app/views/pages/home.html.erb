@@ -1,0 +1,35 @@
+<h1>Sale Importer</h1>
+<p>Created by: Rubén Huchin</p>
+
+<%= render "sales/import_form" %>
+
+<% if @sales.count > 0 %>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th class="text-center" scope="col">#</th>
+				<th class="text-center" scope="col">Cliente</th>
+				<th class="text-center" scope="col">Producto</th>
+				<th class="text-center" scope="col">Precio</th>
+				<th class="text-center" scope="col">Cantidad</th>
+				<th class="text-center" scope="col">Dirección</th>
+				<th class="text-center" scope="col">Vendedor</th>
+				<th class="text-center" scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @sales.each do |sale| %>
+				<tr>
+					<th class="text-center" scope="row"><%= sale.id %></td>
+					<td class="text-center"><%= Customer.find(sale.cumtomer_id).name %></td>
+					<td class="text-center"><%= Product.find(sale.product_id).name %></td>
+					<td class="text-end"><%= number_to_currency(sale.price) %></td>
+					<td class="text-center"><%= number_with_delimiter(sale.amount) %></td>
+					<td class="text-center"><%= sale.seller_address %></td>
+					<td class="text-center"><%= Seller.find(sale.seller_id).name %></td>
+					<td class="text-center"><%= link_to "Detalles", sale, class: "btn btn-info text-white" %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>

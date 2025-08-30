@@ -1,0 +1,12 @@
+<% content_for :title, "Editing sale" %>
+
+<h1>Editing sale</h1>
+
+<%= render "form", sale: @sale %>
+
+<br>
+
+<div class="btn-group">
+	<%= link_to "Show this sale", @sale, class: 'btn btn-warning' %>
+	<%= link_to "Back to home", root_path, class: 'btn btn-secondary' %>
+</div>

@@ -1,0 +1,34 @@
+<form class="container">
+	<div class="form-group row" id="<%= dom_id sale %>">
+		<label for="customer" class="col-sm-2 col-form-label">Cumtomer:</label>
+		<div class="col-sm-10">
+			<input type="text" readonly class="form-control-plaintext" id="customer" value="<%= Customer.find(sale.cumtomer_id).name %>">
+		</div>
+
+		<label for="seller" class="col-sm-2 col-form-label">Seller:</label>
+		<div class="col-sm-10">
+			<input type="text" readonly class="form-control-plaintext" id="seller" value="<%= Seller.find(sale.seller_id).name %>">
+		</div>
+
+		<label for="product" class="col-sm-2 col-form-label">Product:</label>
+		<div class="col-sm-10">
+			<input type="text" readonly class="form-control-plaintext" id="product" value="<%= Product.find(sale.product_id).name %>">
+		</div>
+
+		<label for="price" class="col-sm-2 col-form-label">Price:</label>
+		<div class="col-sm-10">
+			<input type="text" readonly class="form-control-plaintext" id="price" value="<%= number_to_currency(sale.price) %>">
+		</div>
+
+		<label for="amount" class="col-sm-2 col-form-label">Amount:</label>
+		<div class="col-sm-10">
+			<input type="text" readonly class="form-control-plaintext" id="amount" value="<%= number_with_delimiter(sale.amount) %>">
+		</div>
+
+		<label for="amount" class="col-sm-2 col-form-label">Seller address:</label>
+		<div class="col-sm-10">
+			<input type="text" readonly class="form-control-plaintext" id="amount" value="<%= sale.seller_address %>">
+		</div>
+
+	</div>
+</form>
